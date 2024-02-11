@@ -27,7 +27,7 @@ function animate_logo {
 
 # Function to display social media links
 function display_social_media_links {
-  echo -e "${YELLOW}Telegram: ${NORMAL}@tdm_504"
+  echo -e "${YELLOW}Telegram: ${NORMAL}https://t.me/tdm_crypt0"
 }
 
 # Run the animation
