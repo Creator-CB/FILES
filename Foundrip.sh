@@ -13,7 +13,7 @@ max_retries=3
 retry_delay=10
 retries=0
 while [ $retries -lt $max_retries ]; do
-    if curl -L https://foundry.paradigm.xyz | sudo bash; 
+    if curl -L https://foundry.paradigm.xyz | sudo bash; then
         echo "Foundry installation successful."
         break
     else
@@ -46,4 +46,3 @@ fi
 
 # Source bashrc again after foundryup
 source /root/.bashrc || source /etc/profile
-
