@@ -23,15 +23,7 @@ while [ $retries -lt $max_retries ]; do
     fi
 done
 
-# Check if installation was successful
-if [ $retries -eq $max_retries ]; then
-    echo "Error: Failed to install Foundry after $max_retries attempts."
-    exit 1
-fi
 
-# Pause after basic installation
-echo "Waiting for installation to complete..."
-sleep 10
 
 # Source bashrc to apply changes
 source /root/.bashrc || source /etc/profile
