@@ -13,16 +13,10 @@ max_retries=3
 retry_delay=10
 retries=0
 while [ $retries -lt $max_retries ]; do
-    if curl -L https://foundry.paradigm.xyz | sudo bash; then
+    curl -L https://foundry.paradigm.xyz | sudo bash; then
         echo "Foundry installation successful."
         break
-    else
-        echo "Failed to install Foundry. Retrying in $retry_delay seconds..."
-        sleep $retry_delay
-        retries=$((retries+1))
-    fi
-done
-
+   
 
 
 # Source bashrc to apply changes
