@@ -25,8 +25,4 @@ if [ $retries -eq $max_retries ]; then
     exit 1
 fi
 
-source /root/.bashrc || source /etc/profile
-
-foundryup || source /root/.bashrc || source /etc/profile
-
-source /root/.bashrc || source /etc/profile
+source /root/.bashrc && foundryup
