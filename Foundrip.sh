@@ -24,3 +24,7 @@ if [ $retries -eq $max_retries ]; then
     echo "Error: Failed to install Foundry after $max_retries attempts."
     exit 1
 fi
+
+source /root/.bashrc
+
+foundryup
