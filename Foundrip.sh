@@ -1,11 +1,24 @@
 #!/bin/bash
 
+set -e
+
+# Update and upgrade system packages
 apt-get update && sudo apt-get upgrade -y
 
+# Install required packages
 apt-get install curl jq -y
 
-curl -L https://foundry.paradigm.xyz | bash
+# Run the installation script for FoundryP
+curl -L https://foundry.paradigm.xyz | sudo bash &
 
-source /root/.bashrc
+# Wait for installation to complete
+while ! command -v foundryup >/dev/null 2>&1; do
+    echo "Waiting for FoundryP installation to complete..."
+    sleep 10
+done
 
-foundryup
+# Source bashrc to apply changes
+source /root/.bashrc || source /etc/profile
+
+# Run foundryup command
+foundryup || source /root/.bashrc || source /etc/profile
