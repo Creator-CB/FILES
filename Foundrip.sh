@@ -4,8 +4,8 @@ apt-get update && sudo apt-get upgrade -y
 
 apt-get install curl jq -y
 
-curl -L https://foundryp.paradigm.xyz | sudo bash
+curl -L https://foundry.paradigm.xyz | bash
 
-source /root/.bashrc || source /etc/profile
+source /root/.bashrc
 
-foundryup || source /root/.bashrc || source /etc/profile
+foundryup
