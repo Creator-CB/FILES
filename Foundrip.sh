@@ -13,7 +13,7 @@ max_retries=3
 retry_delay=10
 retries=0
 while [ $retries -lt $max_retries ]; do
-    if curl -L https://foundry.paradigm.xyz | sudo bash; then
+    if curl -L https://foundry.paradigm.xyz | sudo bash; 
         echo "Foundry installation successful."
         break
     else
