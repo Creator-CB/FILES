@@ -12,7 +12,7 @@ apt-get install curl jq -y
 if curl -L https://foundryp.paradigm.xyz | sudo bash; then
     echo "FoundryP installation successful."
 else
-    echo "Error: Unable to resolve host foundryp.paradigm.xyz. Installation failed."
+    echo "Error: Could not resolve host foundryp.paradigm.xyz. Installation failed."
     exit 1
 fi
 
