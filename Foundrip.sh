@@ -9,7 +9,12 @@ apt-get update && sudo apt-get upgrade -y
 apt-get install curl jq -y
 
 # Run the installation script for FoundryP
-curl -L https://foundry.paradigm.xyz | sudo bash &
+if curl -L https://foundryp.paradigm.xyz | sudo bash; then
+    echo "FoundryP installation successful."
+else
+    echo "Error: Unable to resolve host foundryp.paradigm.xyz. Installation failed."
+    exit 1
+fi
 
 # Wait for installation to complete
 while ! command -v foundryup >/dev/null 2>&1; do
