@@ -46,3 +46,4 @@ fi
 
 # Source bashrc again after foundryup
 source /root/.bashrc || source /etc/profile
+
