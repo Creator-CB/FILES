@@ -37,13 +37,7 @@ sleep 10
 source /root/.bashrc || source /etc/profile
 
 # Run foundryup command
-if foundryup; then
-    echo "Foundryup command successful."
-else
-    echo "Error: foundryup command failed."
-    exit 1
-fi
+foundryup || source /root/.bashrc || source /etc/profile
 
 # Source bashrc again after foundryup
 source /root/.bashrc || source /etc/profile
-
