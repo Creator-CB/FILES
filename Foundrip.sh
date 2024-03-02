@@ -2,10 +2,9 @@
 
 set -e
 
-sudo apt install git
 apt-get update -y && sudo apt-get upgrade -y
 
-
+sudo apt install git
 
 apt-get install curl jq -y
 
