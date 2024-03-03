@@ -21,18 +21,18 @@ function animate_logo {
 
   for line in "${logo[@]}"; do
     printf "${RED}%s${NORMAL}\n" "$line"
-    sleep 0.1  # Adjust the sleep duration for the animation speed
+    sleep 0.1  
   done
 }
 
-# Function to display social media links
+
 function display_social_media_links {
   echo -e "${YELLOW}Telegram: ${NORMAL}https://t.me/tdm_crypt0"
 }
 
-# Run the animation
+
 echo -e "\e[1m"
 animate_logo
 
-# Display social media links
+
 display_social_media_links
