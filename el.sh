@@ -25,20 +25,20 @@ function install_docker {
 
 function prepare_files {
     echo -e "${YELLOW}Подготавливаем файлы конфига${NORMAL}"
-    if [ ! -d "/root/rustc/rust/io/elixir" ]; then
-        rm -rf /root/rustc/rust/io/elixir
+    if [ ! -d "/root/conf/dock/elixir" ]; then
+        rm -rf /root/conf/dock/elixir
     fi
 
     docker rm -f ev &>/dev/null
 
-    mkdir -p /root/rustc/rust/io/elixir && cd /root/rustc/rust/io/elixir
+    mkdir -p /root/conf/dock/elixir && cd /root/conf/dock/elixir
 
     STRATEGY_EXECUTOR_IP_ADDRESS=$(hostname -I | cut -d' ' -f1)
     read -p "Введите имя вашей ноды(это имя будет отображаться на дашбордах) " STRATEGY_EXECUTOR_DISPLAY_NAME
     read -p "Введите адрес кошелька(этот кошелек будет использоваться для ревардов) " STRATEGY_EXECUTOR_BENEFICIARY
     read -p "Введите приватный ключ с предыдущего пункта. Приватный ключ НЕ должен содержать приставку 0x " SIGNER_PRIVATE_KEY
 
-    sudo tee /root/rustc/rust/io/elixir/.env > /dev/null <<EOF
+    sudo tee /root/conf/dock/elixir/.env > /dev/null <<EOF
 ENV=testnet-3
 
 STRATEGY_EXECUTOR_IP_ADDRESS=$STRATEGY_EXECUTOR_IP_ADDRESS
@@ -57,8 +57,8 @@ function run_docker {
             docker rm -f elixir &>/dev/null
         fi
     fi
-    cd /root/rustc/rust/io/elixir
-    docker run -d --env-file /root/rustc/rust/io/elixir/.env --name elixir --restart unless-stopped elixirprotocol/validator:v3
+    cd /root/conf/dock/elixir
+    docker run -d --env-file /root/conf/dock/elixir/.env --name elixir --restart unless-stopped elixirprotocol/validator:v3
   }
 
 
