@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /root/conf/dock/elixir
+cd /root/conf/dock/elixir/
 
 docker kill elixir &>/dev/null
 docker rm -f elixir &>/dev/null
