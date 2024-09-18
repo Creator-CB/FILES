@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Переходим в директорию с конфигурационным файлом
-cd /home/config/docker/docker-compose/allora-huggingface-walkthrough || { echo "Не удалось зайти в директорию allora-huggingface-walkthrough"; exit 1; }
+cd /root/conf/dock/allora-huggingface-walkthrough || { echo "Не удалось зайти в директорию allora-huggingface-walkthrough"; exit 1; }
 
 # Запрашиваем новый RPC у пользователя
 read -p "Введите новый RPC URL: " new_rpc
