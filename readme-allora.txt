@@ -3,7 +3,7 @@ INSTALL_CLI_WALLET
 bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/allora-cli-wallet.sh)
 
 INSTALL_ALLORA_WORKER
-bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/main/allora.sh)
+bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/INSTALL_ALLORA_WORKER.sh)
 
 CHANGE RPC
 bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/main/Allora-worker-rpcchange.sh)
