@@ -4,33 +4,21 @@ echo "--------------------------------------------------------------------------
 curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/doubletop.sh | bash
 echo "-----------------------------------------------------------------------------"
 
+curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/main.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/ufw.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/docker.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/go.sh | bash &>/dev/null
+
 echo "-----------------------------------------------------------------------------"
-echo "Установка Allora Worker"
+echo "Установка Allora CLI"
 echo "-----------------------------------------------------------------------------"
 
-echo "Введите сид фразу от кошелька, который будет использоваться для воркера "
-read WALLET_SEED_PHRASE
+source .profile
 
-echo "Введите Coin Gecko API key"
-read COIN_GECKO_API_KEY
-
-cd /home/config/docker/docker-compose
-git clone https://github.com/allora-network/allora-huggingface-walkthrough
-cd allora-huggingface-walkthrough
-mkdir -p worker-data
-chmod -R 777 worker-data
-
-wget https://raw.githubusercontent.com/DOUBLE-TOP/guides/main/allora/config.json
-sed -i "s|SeedPhrase|$WALLET_SEED_PHRASE|" /home/config/docker/docker-compose/allora-huggingface-walkthrough/config.json
-sed -i "s|\":8000|\":18000|" /home/config/docker/docker-compose/allora-huggingface-walkthrough/config.json
-
-sed -i "s|<Your Coingecko API key>|$COIN_GECKO_API_KEY|" /home/config/docker/docker-compose/allora-huggingface-walkthrough/app.py
-
-chmod +x init.config
-./init.config
-
-sed -i "s|\"8000:8000\"|\"18000:8000\"|" /home/config/docker/docker-compose/allora-huggingface-walkthrough/docker-compose.yaml
-docker compose up -d --build
+cd /root/conf/dock && git clone https://github.com/allora-network/allora-chain.git
+cd allora-chain && make all
+cd /root/conf/dock && source .profile
+allorad version
 
 echo "-----------------------------------------------------------------------------"
 echo "Wish lifechange case with DOUBLETOP"
