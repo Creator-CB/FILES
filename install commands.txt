@@ -1,3 +1,8 @@
+___________________________________ALLORA
+
+mkdir -p /home/config/docker/docker-compose/go && cd /home/config/docker/docker-compose/go
+___________________________________________________________________________________________________________________________________________
+
 INSTALL_CLI_WALLET
 
 bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/allora-cli-wallet.sh)
@@ -24,3 +29,22 @@ rm -rf allora-chain basic-coin-prediction-node allora-huggingface-walkthrough .a
 
 
 add another wallet: allorad keys add testkey --recover
+
+
+_____________________________________ELIXIR
+mkdir -p /home/config/docker/docker-compose/go && cd /home/config/docker/docker-compose/go
+
+___________________________________________________________________________________________________________________________________________
+INSTALL
+
+bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/el.sh)
+
+
+UPGRADE 
+ 
+bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/update_el.sh)
+
+
+
+
+
