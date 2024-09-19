@@ -25,20 +25,20 @@ function install_docker {
 
 function prepare_files {
     echo -e "${YELLOW}Подготавливаем файлы конфига${NORMAL}"
-    if [ ! -d "/root/conf/dock/elixir" ]; then
-        rm -rf /root/conf/dock/elixir
+    if [ ! -d "/home/config/docker/docker-compose/go/elixir" ]; then
+        rm -rf /home/config/docker/docker-compose/go/elixir
     fi
 
     docker rm -f ev &>/dev/null
 
-    mkdir -p /root/conf/dock/elixir && cd /root/conf/dock/elixir
+    mkdir -p /home/config/docker/docker-compose/go/elixir && cd /home/config/docker/docker-compose/go/elixir
 
     STRATEGY_EXECUTOR_IP_ADDRESS=$(hostname -I | cut -d' ' -f1)
     read -p "Введите имя вашей ноды(это имя будет отображаться на дашбордах) " STRATEGY_EXECUTOR_DISPLAY_NAME
     read -p "Введите адрес кошелька(этот кошелек будет использоваться для ревардов) " STRATEGY_EXECUTOR_BENEFICIARY
     read -p "Введите приватный ключ с предыдущего пункта. Приватный ключ НЕ должен содержать приставку 0x " SIGNER_PRIVATE_KEY
 
-    sudo tee /root/conf/dock/elixir/.env > /dev/null <<EOF
+    sudo tee /home/config/docker/docker-compose/go/elixir/.env > /dev/null <<EOF
 ENV=testnet-3
 
 STRATEGY_EXECUTOR_IP_ADDRESS=$STRATEGY_EXECUTOR_IP_ADDRESS
@@ -57,8 +57,8 @@ function run_docker {
             docker rm -f elixir &>/dev/null
         fi
     fi
-    cd /root/conf/dock/elixir
-    docker run --env-file /root/conf/dock/elixir/.env --name elixir --platform linux/amd64 --restart always -p 17690:17690 elixirprotocol/validator:v3
+    cd /home/config/docker/docker-compose/go/elixir
+    docker run --env-file /home/config/docker/docker-compose/go/elixir/.env --name elixir --platform linux/amd64 --restart always -p 17690:17690 elixirprotocol/validator:v3
   }
 
 
