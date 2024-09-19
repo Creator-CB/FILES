@@ -15,9 +15,9 @@ echo "--------------------------------------------------------------------------
 
 source .profile
 
-cd /root/conf/dock && git clone https://github.com/allora-network/allora-chain.git
+cd /home/config/docker/docker-compose/go && git clone https://github.com/allora-network/allora-chain.git
 cd allora-chain && make all
-cd /root/conf/dock && source .profile
+cd /home/config/docker/docker-compose/go && source .profile
 allorad version
 
 echo "-----------------------------------------------------------------------------"
