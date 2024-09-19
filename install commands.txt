@@ -5,7 +5,9 @@ ________________________________________________________________________________
 
 INSTALL_CLI_WALLET
 
-bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/allora-cli-wallet.sh)
+bash <(curl -s https://raw.githubusercontent.com/DOUBLE-TOP/guides/main/allora/install_allora.sh)
+
+source .profile && allorad keys add testkey --recover
 
 INSTALL_ALLORA_WORKER
 bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/INSTALL_ALLORA_WORKER.sh)
@@ -25,7 +27,6 @@ docker-compose -f /home/config/docker/docker-compose/go/allora-huggingface-walkt
 rm -rf allora-chain basic-coin-prediction-node allora-huggingface-walkthrough .allorad
 
 
-add another wallet: allorad keys add testkey --recover
 
 
 
