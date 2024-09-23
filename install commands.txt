@@ -18,7 +18,7 @@ bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/mai
 LOGS
 docker-compose -f /home/config/docker/docker-compose/go/allora-huggingface-walkthrough/docker-compose.yaml logs -f
 
-
+docker-compose -f /root/conf/dock/allora-huggingface-walkthrough/docker-compose.yaml logs -f
 curl http://localhost:18000/inference/ETH
 
 DELETE:
@@ -29,6 +29,16 @@ rm -rf allora-chain basic-coin-prediction-node allora-huggingface-walkthrough .a
 
 
 
+
+docker-compose -f /home/config/docker/docker-compose/basic-coin-prediction-node/docker-compose.yml down -v
+docker-compose -f /home/config/docker/docker-compose/allora-huggingface-walkthrough/docker-compose.yaml down -v
+rm -rf /home/config &&  rm -rf rust && /root/rustc/rust/go/allora-chain 
+cd
+docker rm -f /root/conf &&  docker rm -f elixir && rm -rf $HOME/elixir && rm -rf /root/conf && rm -rf /root/rustc/rust/go/allora-chain docker-compose -f /home/config/docker/docker-compose/basic-coin-prediction-node/docker-compose.yml down -v
+docker-compose -f /home/config/docker/docker-compose/allora-huggingface-walkthrough/docker-compose.yaml down -v
+rm -rf /home/config &&  rm -rf rust && /root/rustc/rust/go/allora-chain 
+cd
+docker rm -f /root/conf &&  docker rm -f elixir && rm -rf $HOME/elixir && rm -rf /root/conf && rm -rf /root/rustc/rust/go/allora-chain 
 
 
 
