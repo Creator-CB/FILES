@@ -15,6 +15,9 @@ bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/mai
 CHANGE RPC
 bash <(curl -s https://raw.githubusercontent.com/Creator-CB/FILES/refs/heads/main/Allora-worker-rpcchange.sh)
 
+
+https://allora-rpc.testnet.allora.network/
+
 LOGS
 docker-compose -f /home/config/docker/docker-compose/go/allora-huggingface-walkthrough/docker-compose.yaml logs -f
 
